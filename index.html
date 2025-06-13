@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Math Game</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include math.js library from CDN for convenience -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.min.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <button id="newGameBtn" class="action-btn">New Game</button>
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="timer">Time: <span id="timer">0s</span></div>
+        </header>
+
+        <main class="game-area">
+            <div id="targetNumber" class="game-number target-number"></div>
+            <div class="element-grid">
+                <div class="element-wrapper top-left">
+                    <span class="element-label">A</span>
+                    <div class="element-number" id="elementA" data-label="A"></div>
+                </div>
+                <div class="element-wrapper top-right">
+                    <span class="element-label">B</span>
+                    <div class="element-number" id="elementB" data-label="B"></div>
+                </div>
+                <div class="element-wrapper bottom-left">
+                    <span class="element-label">C</span>
+                    <div class="element-number" id="elementC" data-label="C"></div>
+                </div>
+                <div class="element-wrapper bottom-right">
+                    <span class="element-label">D</span>
+                    <div class="element-number" id="elementD" data-label="D"></div>
+                </div>
+            </div>
+        </main>
+
+        <section class="formula-controls">
+            <div class="operator-buttons">
+                <button class="operator-btn" data-op="+">+</button>
+                <button class="operator-btn" data-op="-">-</button>
+                <button class="operator-btn" data-op="*">*</button>
+                <button class="operator-btn" data-op="/">/</button>
+                <button class="operator-btn" data-op="(">(</button>
+                <button class="operator-btn" data-op=")">)</button>
+                <button class="operator-btn utility-btn" data-op="delete">DEL</button>
+                <button class="operator-btn utility-btn" data-op="clear">CLR</button>
+            </div>
+            <input type="text" id="formulaInput" placeholder="Enter formula (e.g., A+B*C-D)" spellcheck="false" autocomplete="off">
+            <button id="submitFormulaBtn" class="action-btn">Submit Formula</button>
+            <div id="feedback" class="feedback"></div>
+        </section>
+    </div>
+
+    <!-- Level Selection Modal -->
+    <div id="levelSelectionModal" class="modal">
+        <div class="modal-content">
+            <h2>Select Level</h2>
+            <div id="levelsContainer"></div>
+            <button id="closeModalBtn" class="action-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
